@@ -1,0 +1,7 @@
+TIMESTAMP = 1464441644
+SHA256 (syncthing-syncthing-inotify-v0.8_GH0.tar.gz) = 886f38fa4b62ef58d54cfa379a1de7e9c461a0ff14149497934fa654e73c946a
+SIZE (syncthing-syncthing-inotify-v0.8_GH0.tar.gz) = 22486
+SHA256 (cenkalti-backoff-9831e1e_GH0.tar.gz) = aadaf18958680eeab6bcb0ddce87b5654fb94bc7f19fb4bb9464f53a1ce5099c
+SIZE (cenkalti-backoff-9831e1e_GH0.tar.gz) = 6415
+SHA256 (zillode-notify-2da5cc9_GH0.tar.gz) = 55f9f78ad903d8f626637e35463de900b89e872d1d9b39f2986fc7486517a9d8
+SIZE (zillode-notify-2da5cc9_GH0.tar.gz) = 55099

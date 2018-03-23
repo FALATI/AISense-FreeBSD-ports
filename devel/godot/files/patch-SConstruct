@@ -1,0 +1,26 @@
+--- SConstruct.orig	2016-02-29 11:52:09 UTC
++++ SConstruct
+@@ -223,15 +223,17 @@ if selected_platform in platform_list:
+ 	if env["extra_suffix"] != '' :
+ 		env.extra_suffix += '.'+env["extra_suffix"]
+ 
+-	CCFLAGS = env.get('CCFLAGS', '')
+-	env['CCFLAGS'] = ''
++	env['CC'] = os.environ['CC']
++	env['CXX'] = os.environ['CXX']
++	
++	CFLAGS = os.environ['CFLAGS']
++	env['CFLAGS'] = []
++	env.Append(CFLAGS=string.split(str(CFLAGS)))
+ 
++	CCFLAGS = os.environ['CXXFLAGS']
++	env['CCFLAGS'] = []
+ 	env.Append(CCFLAGS=string.split(str(CCFLAGS)))
+ 
+-	CFLAGS = env.get('CFLAGS', '')
+-	env['CFLAGS'] = ''
+-
+-	env.Append(CFLAGS=string.split(str(CFLAGS)))
+ 
+ 	LINKFLAGS = env.get('LINKFLAGS', '')
+ 	env['LINKFLAGS'] = ''

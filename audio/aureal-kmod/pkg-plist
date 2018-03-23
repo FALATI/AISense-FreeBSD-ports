@@ -1,0 +1,3 @@
+/%%KMODDIR%%/snd_au8810.ko
+/%%KMODDIR%%/snd_au8820.ko
+/%%KMODDIR%%/snd_au8830.ko

@@ -1,0 +1,11 @@
+--- configure.orig	2013-05-23 15:11:54 UTC
++++ configure
+@@ -12742,7 +12742,7 @@ $as_echo "#define X_HAVE_XAAGETROP 1" >>
+ $as_echo "#define X_NEED_I2CSTART 1" >>confdefs.h
+ 
+ 
+-DRIVER_MAN_SUFFIX="4"
++DRIVER_MAN_SUFFIX="4x"
+ 
+ 
+ 

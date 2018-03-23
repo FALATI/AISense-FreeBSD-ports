@@ -1,0 +1,31 @@
+# $FreeBSD$
+
+PORTNAME=	stlink
+PORTVERSION=	1.2.0.20160506
+CATEGORIES=	devel
+
+MAINTAINER=	lev@FreeBSD.org
+COMMENT=	STM32 ST-Link JTAG variant tools
+
+LICENSE=	BSD3CLAUSE
+
+OPTIONS_DEFINE=		GTK3
+OPTIONS_SUB=		GTK3
+GTK3_CONFIGURE_ON=	--with-gtk
+GTK3_USE=		GNOME=gtk30
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	texane
+GH_TAGNAME=	e454fe9
+
+USES=		autoreconf gmake pkgconfig
+GNU_CONFIGURE=	yes
+
+PORTDOCS=	README tutorial.md
+
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/doc/tutorial.md ${STAGEDIR}${DOCSDIR}/tutorial.md
+
+.include <bsd.port.mk>

@@ -1,0 +1,33 @@
+--- Makefile.orig	2016-03-24 21:02:55 UTC
++++ Makefile
+@@ -3,7 +3,7 @@ ifndef CC
+   CC=gcc
+ endif
+ 
+-GIT_VERSION = $(shell git describe --tags --always --dirty=-wip)
++#GIT_VERSION = $(shell git describe --tags --always --dirty=-wip)
+ 
+ # Ugly hack to get version if git isn't installed
+ ifeq ($(GIT_VERSION),)
+@@ -14,9 +14,9 @@ endif
+ OS := $(shell uname)
+ 
+ SRCS      = sslscan.c
+-PREFIX    = /usr
++#PREFIX    = /usr
+ BINDIR    = $(PREFIX)/bin
+-MANDIR    = $(PREFIX)/share/man
++MANDIR    = $(PREFIX)/man
+ MAN1DIR   = $(MANDIR)/man1
+ 
+ WARNINGS  = -Wall -Wformat=2
+@@ -68,6 +68,9 @@ install:
+ ifeq ($(OS), Darwin)
+ 	install sslscan $(DESTDIR)$(BINDIR)/sslscan;
+ 	install sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;
++else ifeq ($(OS), FreeBSD)
++	install -s -m 755 sslscan $(DESTDIR)$(BINDIR)
++	install -m 644 sslscan.1 $(DESTDIR)$(MAN1DIR)
+ else
+ 	install -D sslscan $(DESTDIR)$(BINDIR)/sslscan;
+ 	install -D sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;

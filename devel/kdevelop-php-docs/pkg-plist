@@ -1,0 +1,5 @@
+lib/kde4/kdevphpdocs.so
+lib/kde4/kdevphpdocs_config.so
+share/config.kcfg/phpdocssettings.kcfg
+share/kde4/services/kdevphpdocs.desktop
+share/kde4/services/kdevphpdocs_config.desktop
